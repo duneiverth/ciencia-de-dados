@@ -3,11 +3,11 @@ const url = 'https://raw.githubusercontent.com/duneiverth/ciencia-de-dados/refs/
 async function vizualizarInformacoesGlobais() {
     const res = await fetch(url)
     const dados = await res.json()
-    const pessoasConectadas = (total_pessoas_mundo / 1e9)
-    const pessoasNoMundo = (dados.total_pessoas_mundo / 1e9)
+    const pessoasPraticam = (total_pessoas_mundo / 1e9)
+    const pessoasNoMundo = (dados.total_pessoas_que_praticam_esportes_regularmente / 1e9)
     const horas = parseInt(dados.tempo_medio)
     const minutos = Math.round((dados.tempo_medio - horas) * 100)
-    const porcentagemConectada = ((pessoasConectadas / pessoasNoMundo ) * 100).toFixed(2)
+    const porcentagemConectada = ((pessoasPraticam / pessoasNoMundo ) * 100).toFixed(2)
 
     const paragrafo = document.createElement('p')
     paragrafo.classList.add('graficos-container__texto')
