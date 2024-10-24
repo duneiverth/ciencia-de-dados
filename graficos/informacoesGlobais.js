@@ -5,7 +5,7 @@ async function vizualizarInformacoesGlobais() {
     const dados = await res.json()
     const pessoasPraticam = (dados.total_pessoas_mundo / 7.888e9)
     const pessoasNoMundo = (dados.total_pessoas_que_praticam_esportes_regularmente / 3.0e9)
-    const horas = parseInt(dados.tempo_medio_pessoas_praticando_esportes)
+    const horas = parseInt(dados.tempo_medio_semana_praticando_esportes)
     const minutos = Math.round((dados.tempo_medio - horas) * 100)
     const porcentagemConectada = ((pessoasPraticam / pessoasNoMundo ) * 100).toFixed(2)
 
